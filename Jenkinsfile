@@ -3,9 +3,7 @@ pipeline{
 
     tools {
          maven 'maven'
-        "M3"
          jdk 'java'
-        "null"
     }
 
     stages{
