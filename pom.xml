@@ -32,7 +32,6 @@
                 <executions>
                     <execution>
                         <phase>package</phase>
-                        <phase>Compile</phase>
 
                         <goals>
                             <goal>shade</goal>
