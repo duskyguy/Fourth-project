@@ -35,6 +35,7 @@
 
                         <goals>
                             <goal>shade</goal>
+                            <goal>compile</goal>
                         </goals>
                         <configuration>
                             <transformers>
