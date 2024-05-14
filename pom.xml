@@ -23,7 +23,7 @@
        </dependencies>
        <!-- end::joda[] -->
        
-  
+  <build>
     
     </pluginManagement>
         <plugins>
