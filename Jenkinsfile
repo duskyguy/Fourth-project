@@ -6,7 +6,7 @@ pipeline{
             steps
             {
                 
-                bat 'C:/Users/bharg/Downloads/Maven/apache-maven-3.9.6'
+                bat 'C:/Users/bharg/Downloads/Maven/apache-maven-3.9.6/bin'
             }
         }
     }
