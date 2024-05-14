@@ -51,6 +51,6 @@
                 </executions>
             </plugin>
         </plugins>
-    </pluginmanagament>
+    </pluginManagament>
     </build>
 </project>
