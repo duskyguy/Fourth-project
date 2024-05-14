@@ -45,8 +45,7 @@
 
                 <executions>
                <execution>
-                  <id>id.pre-clean</id>
-                  <phase>pre-clean</phase>
+                  
                   <goals>
                      <goal>run</goal>
                   </goals>
