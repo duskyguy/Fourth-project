@@ -36,7 +36,7 @@
                <execution>
                   
                   <goals>
-                     <goal>run</goal>
+                     <goal>shade</goal>
                   </goals>
                   <configuration>
 
