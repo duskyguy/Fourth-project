@@ -7,13 +7,43 @@
     <packaging>jar</packaging>
     <version>0.2.0</version>
 
-build>
+    <!-- tag::joda[] -->
+     <properties>
+           <java.version>1.8</java.version>
+           <maven.compiler.source>1.8</maven.compiler.source>
+           <maven.compiler.target>1.8</maven.compiler.target>
+     </properties>
+
+      <dependencies>
+           <dependency>
+               <groupId>joda-time</groupId>
+               <artifactId>joda-time</artifactId>
+               <version>2.2</version>
+           </dependency>
+       </dependencies>
+       <!-- end::joda[] -->
+       
+  <build>
+    <pluginManagement>
       <plugins>
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-antrun-plugin</artifactId>
-            <version>1.1</version>
-            <executions>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.13.0</version>
+          <configuration>
+            <release>11</release>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.3</version>
+
+                <executions>
                <execution>
                   <id>id.pre-clean</id>
                   <phase>pre-clean</phase>
@@ -21,39 +51,17 @@ build>
                      <goal>run</goal>
                   </goals>
                   <configuration>
-                     <tasks>
-                        <echo>pre-clean phase</echo>
-                     </tasks>
-                  </configuration>
-               </execution>
-            
-               <execution>
-                  <id>id.clean</id>
-                  <phase>clean</phase>
-                  <goals>
-                     <goal>run</goal>
-                  </goals>
-                  <configuration>
-                     <tasks>
-                        <echo>clean phase</echo>
-                     </tasks>
-                  </configuration>
-               </execution>
-            
-               <execution>
-                  <id>id.post-clean</id>
-                  <phase>post-clean</phase>
-                  <goals>
-                     <goal>run</goal>
-                  </goals>
-                  <configuration>
-                     <tasks>
-                        <echo>post-clean phase</echo>
-                     </tasks>
-                  </configuration>
-               </execution>
-            </executions>
-         </plugin>
-      </plugins>
-   </build>
+
+                            <transformers>
+                                <transformer
+                                    implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>hello.HelloWorld</mainClass>
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
