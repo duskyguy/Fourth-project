@@ -24,8 +24,6 @@
        <!-- end::joda[] -->
        
   <build>
-    
-    <pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -34,9 +32,10 @@
 
                 <executions>
                <execution>
-                  
+                               <phase>package</phase>
+
                   <goals>
-                     <goal>generate-sources</goal>
+                     <goal>shade</goal>
                   </goals>
                   <configuration>
 
@@ -51,6 +50,5 @@
                 </executions>
             </plugin>
         </plugins>
-    </pluginManagement>
     </build>
 </project>
