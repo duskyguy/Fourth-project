@@ -40,8 +40,8 @@
           <configuration>
             <release>11</release>
           </configuration>
-        </plugin>
-      </plugins>
+        </plugins>
+      </plugin>
     </pluginManagement>
 
         <plugins>
